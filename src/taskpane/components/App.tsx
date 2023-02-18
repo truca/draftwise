@@ -1,5 +1,8 @@
 import * as React from "react";
 import { DefaultButton } from "@fluentui/react";
+import { Provider } from "react-redux";
+
+import store from "./store";
 import Header from "./Header";
 import Progress from "./Progress";
 
@@ -29,16 +32,18 @@ const App = (props: AppProps) => {
   }
 
   return (
-    <div className="ms-welcome">
-      <Header logo={require("./../../../assets/logo-filled.png")} title={props.title} message="Welcome" />
-      <p>{JSON.stringify(state?.dictionary)}</p>
-      <p className="ms-font-l">
-        Modify the source files, then click <b>Run</b>.
-      </p>
-      <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
-        Run
-      </DefaultButton>
-    </div>
+    <Provider store={store}>
+      <div className="ms-welcome">
+        <Header logo={require("./../../../assets/logo-filled.png")} title={props.title} message="Welcome" />
+        <p>{JSON.stringify(state?.dictionary)}</p>
+        <p className="ms-font-l">
+          Modify the source files, then click <b>Run</b>.
+        </p>
+        <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
+          Run
+        </DefaultButton>
+      </div>
+    </Provider>
   );
 };
 

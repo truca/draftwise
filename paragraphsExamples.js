@@ -1,4 +1,4 @@
-export const a = [
+export var a = [
   "MODEL INDEMNIFICATION AGREEMENT",
   "Preliminary Notes",
   "This agreement can be used for both officers and directors of the corporation. In some cases, a director will serve as a nominee of one or a group of investors (e.g., an individual venture capitalist serving as a nominee of a venture capital fund). Because venture capital funds with director nominees may be named as parties or otherwise incur expenses in connection with litigation against their director nominees, some venture capital funds will request that the fund, and not just their director representative, be covered by the indemnification agreement. To the extent a venture capital fund seeks indemnification for the fund itself, Section 1(d) contains bracketed optional language for the draftsperson to consider. The working group has not taken a position as to whether investor indemnification is “market.”",
