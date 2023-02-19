@@ -1,10 +1,13 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { DefaultButton } from "@fluentui/react";
-import { Provider } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
 
-import store from "./store";
 import Header from "./Header";
 import Progress from "./Progress";
+import { DefinitionsState, DefinitionsTypes, TermsObject } from "../reducers/definitions/types";
+import { Actions, ReduxState } from "../reducers";
+import { getTermsWithDefinitions } from "../reducers/definitions/selectors";
 
 /* global Word, require */
 
@@ -20,43 +23,10 @@ export interface AppState {
 
 const App = (props: AppProps) => {
   const { title, isOfficeInitialized } = props;
+  const dispatch = useDispatch<Dispatch<Actions>>();
+  const termsWithDefinitions = useSelector<ReduxState, TermsObject[]>(getTermsWithDefinitions);
 
-  if (!isOfficeInitialized) {
-    return (
-      <Progress
-        title={title}
-        logo={require("./../../../assets/logo-filled.png")}
-        message="Please sideload your addin to see app body."
-      />
-    );
-  }
-
-  return (
-    <Provider store={store}>
-      <div className="ms-welcome">
-        <Header logo={require("./../../../assets/logo-filled.png")} title={props.title} message="Welcome" />
-        <p>{JSON.stringify(state?.dictionary)}</p>
-        <p className="ms-font-l">
-          Modify the source files, then click <b>Run</b>.
-        </p>
-        <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
-          Run
-        </DefaultButton>
-      </div>
-    </Provider>
-  );
-};
-
-export default class App extends React.Component<AppProps, AppState> {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      paragraphs: [],
-      dictionary: [],
-    };
-  }
-
-  click = async () => {
+  const getParagraphsFromWord = () => {
     return Word.run(async (context) => {
       const newParagraph = context.document.body.insertParagraph("Hello World", Word.InsertLocation.end);
       newParagraph.font.color = "blue";
@@ -70,66 +40,37 @@ export default class App extends React.Component<AppProps, AppState> {
         paragraphsTexts.push(paragraphs.items[i].text);
       }
 
-      /*const paragraphs = [];
-      let paragraphCursor = context.document.body.paragraphs.getFirst();
-
-      try {
-        // eslint-disable-next-line no-constant-condition
-        while (true) {
-          paragraphCursor.load("text");
-          await context.sync();
-          paragraphs.push(paragraphCursor.text);
-          paragraphCursor = paragraphCursor.getNext();
-        }
-        // eslint-disable-next-line no-empty
-      } catch (err) {}*/
-
-      /*paragraphCursor.load("isNullObject");
-      await context.sync();
-      while (!paragraphCursor.isNullObject) {
-        paragraphCursor.load("text");
-        await context.sync();
-        paragraphs.push(paragraphCursor.text);
-        paragraphCursor = paragraphCursor.getNextOrNullObject();
-      }*/
-
-      const dictionary = paragraphsTexts
-        .filter((p) => p[0] === "“")
-        .map((p) => {
-          const termEndIndex = p.indexOf("”");
-          const term = p.substr(1, termEndIndex - 1);
-          const definition = p.substr(termEndIndex + 2);
-          return { term, definition };
-        });
-
-      this.setState({ paragraphs: paragraphsTexts, dictionary });
+      dispatch({
+        type: DefinitionsTypes.INITIALIZE_DEFINITIONS,
+        paragraphs: paragraphsTexts,
+      });
     });
   };
 
-  render() {
-    const { title, isOfficeInitialized } = this.props;
+  useEffect(() => {
+    getParagraphsFromWord();
+  }, []);
 
-    if (!isOfficeInitialized) {
-      return (
-        <Progress
-          title={title}
-          logo={require("./../../../assets/logo-filled.png")}
-          message="Please sideload your addin to see app body."
-        />
-      );
-    }
-
+  if (!isOfficeInitialized) {
     return (
-      <div className="ms-welcome">
-        <Header logo={require("./../../../assets/logo-filled.png")} title={this.props.title} message="Welcome" />
-        <p>{JSON.stringify(this.state?.dictionary)}</p>
-        <p className="ms-font-l">
-          Modify the source files, then click <b>Run</b>.
-        </p>
-        <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
-          Run
-        </DefaultButton>
-      </div>
+      <Progress
+        title={title}
+        logo={require("./../../../assets/logo.svg")}
+        message="Please sideload your addin to see app body."
+      />
     );
   }
-}
+
+  return (
+    <div className="ms-welcome">
+      <Header logo={require("./../../../assets/logo.svg")} title={props.title} message="Welcome" />
+      {termsWithDefinitions.map(({ term, definition }) => (
+        <p key={term}>
+          {term}: {definition}
+        </p>
+      ))}
+    </div>
+  );
+};
+
+export default App;

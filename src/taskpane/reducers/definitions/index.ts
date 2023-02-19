@@ -9,7 +9,7 @@ const initialState: DefinitionsState = {
 
 const definitions = (state: DefinitionsState = initialState, action: DefinitionsActions) => {
   switch (action.type) {
-    case DefinitionsTypes.INITIALIZE:
+    case DefinitionsTypes.INITIALIZE_DEFINITIONS:
       // eslint-disable-next-line no-case-declarations
       const definitions = getDefinitionsStateFromParagraphs(action.paragraphs);
       return {

@@ -1,9 +1,12 @@
 import App from "./components/App";
+import { Provider } from "react-redux";
 import { AppContainer } from "react-hot-loader";
 import { initializeIcons } from "@fluentui/font-icons-mdl2";
 import { ThemeProvider } from "@fluentui/react";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+
+import store from "./store";
 
 /* global document, Office, module, require */
 
@@ -17,7 +20,9 @@ const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <ThemeProvider>
-        <Component title={title} isOfficeInitialized={isOfficeInitialized} />
+        <Provider store={store}>
+          <Component title={title} isOfficeInitialized={isOfficeInitialized} />
+        </Provider>
       </ThemeProvider>
     </AppContainer>,
     document.getElementById("container")

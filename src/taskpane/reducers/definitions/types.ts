@@ -1,8 +1,11 @@
 export enum DefinitionsTypes {
-  INITIALIZE,
+  INITIALIZE_DEFINITIONS = "INITIALIZE_DEFINITIONS",
 }
 
-export type InitializeAction = { type: DefinitionsTypes.INITIALIZE; paragraphs: string[] };
+export type InitializeAction = {
+  type: DefinitionsTypes.INITIALIZE_DEFINITIONS;
+  paragraphs: string[];
+};
 
 export type DefinitionsActions = InitializeAction;
 
