@@ -7,6 +7,7 @@ import Progress from "./Progress";
 import { DefinitionsTypes, TermsObject } from "../reducers/definitions/types";
 import { Actions, ReduxState } from "../reducers";
 import { getTermsWithDefinitions } from "../reducers/definitions/selectors";
+import Term from "./Term";
 
 /* global Word, require */
 
@@ -65,9 +66,7 @@ const App = (props: AppProps) => {
       <Header logo={require("./../../../assets/logo.png")} title={props.title} message="Welcome" />
       <div>
         {termsWithDefinitions.map(({ term, definition }) => (
-          <p key={term}>
-            {term}: {definition}
-          </p>
+          <Term key={term} term={term} definition={definition} />
         ))}
       </div>
     </div>

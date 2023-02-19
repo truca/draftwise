@@ -3,6 +3,10 @@
  * See LICENSE in the project root for license information.
  */
 
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
  html,
  body {
      width: 100%;
