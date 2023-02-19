@@ -1,6 +1,5 @@
 import App from "./components/App";
 import { Provider } from "react-redux";
-import { AppContainer } from "react-hot-loader";
 import { initializeIcons } from "@fluentui/font-icons-mdl2";
 import { ThemeProvider } from "@fluentui/react";
 import * as React from "react";
@@ -18,13 +17,11 @@ const title = "Contoso Task Pane Add-in";
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <ThemeProvider>
-        <Provider store={store}>
-          <Component title={title} isOfficeInitialized={isOfficeInitialized} />
-        </Provider>
-      </ThemeProvider>
-    </AppContainer>,
+    <ThemeProvider>
+      <Provider store={store}>
+        <Component title={title} isOfficeInitialized={isOfficeInitialized} />
+      </Provider>
+    </ThemeProvider>,
     document.getElementById("container")
   );
 };
