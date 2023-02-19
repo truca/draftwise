@@ -28,9 +28,6 @@ const App = (props: AppProps) => {
 
   const getParagraphsFromWord = () => {
     return Word.run(async (context) => {
-      const newParagraph = context.document.body.insertParagraph("Hello World", Word.InsertLocation.end);
-      newParagraph.font.color = "blue";
-
       const paragraphs = context.document.body.paragraphs;
       paragraphs.load("text");
       await context.sync();
@@ -63,7 +60,7 @@ const App = (props: AppProps) => {
 
   return (
     <div className="ms-welcome">
-      <Header logo={require("./../../../assets/logo.png")} title={props.title} message="Welcome" />
+      <Header logo={require("./../../../assets/logo.png")} title={props.title} message="DraftWise" />
       <div>
         {termsWithDefinitions.map(({ term, definition }) => (
           <Term key={term} term={term} definition={definition} />
