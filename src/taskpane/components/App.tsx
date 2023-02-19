@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import { DefaultButton } from "@fluentui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
 
 import Header from "./Header";
 import Progress from "./Progress";
-import { DefinitionsState, DefinitionsTypes, TermsObject } from "../reducers/definitions/types";
+import { DefinitionsTypes, TermsObject } from "../reducers/definitions/types";
 import { Actions, ReduxState } from "../reducers";
 import { getTermsWithDefinitions } from "../reducers/definitions/selectors";
 
@@ -55,7 +54,7 @@ const App = (props: AppProps) => {
     return (
       <Progress
         title={title}
-        logo={require("./../../../assets/logo.svg")}
+        logo={require("./../../../assets/logo.png")}
         message="Please sideload your addin to see app body."
       />
     );
@@ -63,12 +62,14 @@ const App = (props: AppProps) => {
 
   return (
     <div className="ms-welcome">
-      <Header logo={require("./../../../assets/logo.svg")} title={props.title} message="Welcome" />
-      {termsWithDefinitions.map(({ term, definition }) => (
-        <p key={term}>
-          {term}: {definition}
-        </p>
-      ))}
+      <Header logo={require("./../../../assets/logo.png")} title={props.title} message="Welcome" />
+      <div>
+        {termsWithDefinitions.map(({ term, definition }) => (
+          <p key={term}>
+            {term}: {definition}
+          </p>
+        ))}
+      </div>
     </div>
   );
 };
