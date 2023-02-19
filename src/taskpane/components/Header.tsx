@@ -1,5 +1,6 @@
 import * as React from "react";
 import { DocumentText20Filled, Textbox20Filled } from "@fluentui/react-icons";
+import Tooltip from "./Tooltip";
 
 export interface HeaderProps {
   title: string;
@@ -17,9 +18,15 @@ export default class Header extends React.Component<HeaderProps> {
           <img className="mr-2" width="50" src={logo} alt={title} title={title} />
           <h1 className="text-lg dw-dark-green-color font-semibold tracking-wide">{message}</h1>
         </div>
-        <div className="flex flex-row items-center pr-4">
-          <DocumentText20Filled filled className="h-8 mr-4 cursor-pointer" />
-          <Textbox20Filled filled className="h-8 cursor-pointer" />
+        <div className="flex flex-row items-center pr-8">
+          <div className="mr-4">
+            <Tooltip content="Document Terms">
+              <DocumentText20Filled filled className="h-8 cursor-pointer" />
+            </Tooltip>
+          </div>
+          <Tooltip content="Paragraph Terms">
+            <Textbox20Filled filled className="h-8 cursor-pointer" />
+          </Tooltip>
         </div>
       </section>
     );

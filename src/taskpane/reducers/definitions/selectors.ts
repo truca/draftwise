@@ -5,9 +5,11 @@ export const getTermsInParagraph =
   (paragraph: string) =>
   (state: ReduxState): string[] => {
     const wordsFromParagraph = paragraph.match(/\w+/g);
+    // all terms are lowercase, so we need to lowercase the words so they can match
+    const lowerCasedWords = wordsFromParagraph.map((word) => word.toLowerCase());
     const { terms } = state.definitions;
 
-    return terms.filter((term) => wordsFromParagraph.includes(term));
+    return terms.filter((term) => lowerCasedWords.includes(term));
   };
 
 export const getTermDefinition =
