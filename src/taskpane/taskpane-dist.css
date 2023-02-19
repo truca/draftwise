@@ -549,17 +549,50 @@ video {
   }
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-.font-bold {
-  font-weight: 700;
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
-.underline {
-  text-decoration-line: underline;
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .filter {
@@ -632,4 +665,14 @@ ul {
 
 b {
   font-weight: bold;
+}
+
+.max-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
