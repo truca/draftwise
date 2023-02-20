@@ -8,8 +8,21 @@ import { DefinitionsTypes, TermsObject } from "../reducers/definitions/types";
 import { Actions, ReduxState } from "../reducers";
 import { getTermsWithDefinitions } from "../reducers/definitions/selectors";
 import Term from "./Term";
+import { routeSelector } from "../reducers/routes/selectors";
+import { Routes } from "../reducers/routes";
 
 /* global Word, require */
+
+const getTitleFromRoute = (route: Routes): string => {
+  switch (route) {
+    case Routes.DOCUMENT:
+      return "Document Terms";
+    case Routes.PARAGRAPH:
+      return "Paragraph Terms";
+    default:
+      return "Paragraph Terms";
+  }
+};
 
 export interface AppProps {
   title: string;
@@ -25,6 +38,8 @@ const App = (props: AppProps) => {
   const { title, isOfficeInitialized } = props;
   const dispatch = useDispatch<Dispatch<Actions>>();
   const termsWithDefinitions = useSelector<ReduxState, TermsObject[]>(getTermsWithDefinitions);
+  const route = useSelector(routeSelector);
+  const sectionTitle = getTitleFromRoute(route);
 
   const getParagraphsFromWord = () => {
     return Word.run(async (context) => {
@@ -61,7 +76,8 @@ const App = (props: AppProps) => {
   return (
     <div className="ms-welcome">
       <Header logo={require("./../../../assets/logo.png")} title={props.title} message="DraftWise" />
-      <div>
+      <div className="mx-2 mt-4 mb-12">
+        <h1 className="text-xl font-semibold tracking-wide">{sectionTitle}</h1>
         {termsWithDefinitions.map(({ term, definition }) => (
           <Term key={term} term={term} definition={definition} />
         ))}
