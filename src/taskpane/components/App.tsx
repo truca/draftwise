@@ -1,27 +1,23 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 
 import Header from "./Header";
 import Progress from "./Progress";
-import { DefinitionsTypes, TermsObject } from "../reducers/definitions/types";
-import { Actions, ReduxState } from "../reducers";
-import { getTermsWithDefinitions } from "../reducers/definitions/selectors";
-import Term from "./Term";
-import { routeSelector } from "../reducers/routes/selectors";
-import { Routes } from "../reducers/routes";
+import { DefinitionsTypes } from "../reducers/definitions/types";
+import { Actions } from "../reducers";
+import TermsList from "./TermsList";
 
-/* global Word, require */
+/* global Word, Office, require */
 
-const getTitleFromRoute = (route: Routes): string => {
-  switch (route) {
-    case Routes.DOCUMENT:
-      return "Document Terms";
-    case Routes.PARAGRAPH:
-      return "Paragraph Terms";
-    default:
-      return "Paragraph Terms";
-  }
+const getParagraphTexts = async (
+  paragraphs: Word.ParagraphCollection,
+  context: Word.RequestContext
+): Promise<string[]> => {
+  paragraphs.load("text");
+  await context.sync();
+
+  return paragraphs.items.map((paragraph) => paragraph.text);
 };
 
 export interface AppProps {
@@ -37,20 +33,11 @@ export interface AppState {
 const App = (props: AppProps) => {
   const { title, isOfficeInitialized } = props;
   const dispatch = useDispatch<Dispatch<Actions>>();
-  const termsWithDefinitions = useSelector<ReduxState, TermsObject[]>(getTermsWithDefinitions);
-  const route = useSelector(routeSelector);
-  const sectionTitle = getTitleFromRoute(route);
 
   const getParagraphsFromWord = () => {
     return Word.run(async (context) => {
       const paragraphs = context.document.body.paragraphs;
-      paragraphs.load("text");
-      await context.sync();
-
-      const paragraphsTexts = [];
-      for (var i = 0; i < paragraphs.items.length; i++) {
-        paragraphsTexts.push(paragraphs.items[i].text);
-      }
+      const paragraphsTexts = await getParagraphTexts(paragraphs, context);
 
       dispatch({
         type: DefinitionsTypes.INITIALIZE_DEFINITIONS,
@@ -59,8 +46,33 @@ const App = (props: AppProps) => {
     });
   };
 
+  const getSelectedParagraphsFromWord = () => {
+    return Word.run(async (context) => {
+      const paragraphs = context.document.getSelection().paragraphs;
+      const paragraphsTexts = await getParagraphTexts(paragraphs, context);
+
+      dispatch({
+        type: DefinitionsTypes.SET_SELECTED_PARAGRAPH_TEXT,
+        paragraphText: paragraphsTexts.join(" "),
+      });
+    });
+  };
+
+  const addHandlerToSelectionChange = () => {
+    Office.context.document.addHandlerAsync(Office.EventType.DocumentSelectionChanged, getSelectedParagraphsFromWord);
+  };
+
+  const removeHandlerToSelectionChange = () => {
+    Office.context.document.removeHandlerAsync(Office.EventType.DocumentSelectionChanged, {
+      handler: getSelectedParagraphsFromWord,
+    });
+  };
+
   useEffect(() => {
     getParagraphsFromWord();
+    addHandlerToSelectionChange();
+
+    return removeHandlerToSelectionChange;
   }, []);
 
   if (!isOfficeInitialized) {
@@ -76,12 +88,7 @@ const App = (props: AppProps) => {
   return (
     <div className="ms-welcome">
       <Header logo={require("./../../../assets/logo.png")} title={props.title} message="DraftWise" />
-      <div className="mx-2 mt-4 mb-12">
-        <h1 className="text-xl font-semibold tracking-wide">{sectionTitle}</h1>
-        {termsWithDefinitions.map(({ term, definition }) => (
-          <Term key={term} term={term} definition={definition} />
-        ))}
-      </div>
+      <TermsList />
     </div>
   );
 };

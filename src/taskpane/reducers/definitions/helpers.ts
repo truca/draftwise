@@ -18,7 +18,7 @@ const getDefinitionsHashFromParagraphs = (paragraphs: string[]): DefinitionsHash
   return getHashFromObjects<TermsObject>(termsAndDefinitions, "term", "definition");
 };
 
-export const getDefinitionsStateFromParagraphs = (paragraphs: string[]): DefinitionsState => {
+export const getDefinitionsStateFromParagraphs = (paragraphs: string[]): Partial<DefinitionsState> => {
   const termsAndDefinitions = getDefinitionsHashFromParagraphs(paragraphs);
   return {
     paragraphs,
