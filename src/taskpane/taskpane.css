@@ -26,6 +26,7 @@
 
  :root {
     --dark-green: #094220;
+    --green: #189450;
   }
 
  .dw-dark-green-color { color: var(--dark-green); }
