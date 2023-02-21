@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Term rendering renders correctly 1`] = `
+<div
+  className="mt-6"
+>
+  <div
+    className="flex flex-row justify-between items-center"
+  >
+    <div
+      className="capitalize text-lg font-extralight"
+    >
+      term
+    </div>
+    <svg
+      aria-label="down-arrow"
+      className="cursor-pointer mt-1 ___12fm75w_v8ls9a0 f1w7gpdv fez10in fg4l7m0"
+      fill="currentColor"
+      height={20}
+      onClick={[Function]}
+      role="img"
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15.8 7.73c.28.3.27.78-.03 1.06l-5.25 5a.75.75 0 0 1-1.04 0l-5.25-5a.75.75 0 0 1 1.04-1.08L10 12.2l4.73-4.5a.75.75 0 0 1 1.06.02Z"
+        fill="currentColor"
+      />
+    </svg>
+  </div>
+  <div
+    className="mt-2 p-2 border-2 border-solid rounded-md cursor-pointer"
+    onClick={[Function]}
+    style={
+      {
+        "borderColor": "#189450",
+      }
+    }
+  >
+    <div
+      className="capitalize text-justify max-lines"
+    >
+      definition
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Term rendering renders long text 1`] = `
+<div
+  className="mt-6"
+>
+  <div
+    className="flex flex-row justify-between items-center"
+  >
+    <div
+      className="capitalize text-lg font-extralight"
+    >
+      long term
+    </div>
+    <svg
+      aria-label="down-arrow"
+      className="cursor-pointer mt-1 ___12fm75w_v8ls9a0 f1w7gpdv fez10in fg4l7m0"
+      fill="currentColor"
+      height={20}
+      onClick={[Function]}
+      role="img"
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15.8 7.73c.28.3.27.78-.03 1.06l-5.25 5a.75.75 0 0 1-1.04 0l-5.25-5a.75.75 0 0 1 1.04-1.08L10 12.2l4.73-4.5a.75.75 0 0 1 1.06.02Z"
+        fill="currentColor"
+      />
+    </svg>
+  </div>
+  <div
+    className="mt-2 p-2 border-2 border-solid rounded-md cursor-pointer"
+    onClick={[Function]}
+    style={
+      {
+        "borderColor": "#189450",
+      }
+    }
+  >
+    <div
+      className="capitalize text-justify max-lines"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas imperdiet tincidunt. Maecenas porttitor, mi dictum malesuada ornare, augue augue rutrum leo, eu gravida magna tellus fringilla diam. Phasellus sagittis viverra gravida. Sed vitae justo vitae lacus hendrerit cursus interdum sed massa. Nulla viverra enim non faucibus pretium. Quisque vel turpis nec purus aliquam scelerisque iaculis interdum sapien. Praesent dictum diam ex, in placerat erat sollicitudin eu. Proin aliquam massa eget gravida tempus. Quisque rutrum dolor ac ultricies pretium. Maecenas ornare turpis id justo aliquam, eget finibus sapien maximus. Aenean interdum augue vel orci sagittis pulvinar non sed erat. Nam vel rhoncus massa. Fusce egestas, ligula non volutpat rhoncus, velit mauris dictum ipsum, sit amet elementum leo lacus ac ante. Mauris convallis lectus eget dui bibendum auctor. Quisque erat neque, interdum ac sapien nec, viverra placerat mauris.
+Aenean rhoncus dignissim fermentum. Suspendisse vitae orci at arcu tempor ornare. Donec imperdiet elementum neque, ut semper augue pretium eget. Quisque pretium sodales velit nec ullamcorper. Sed vehicula tortor in felis finibus lobortis. Pellentesque vel semper elit, pretium porta turpis. Sed cursus dolor libero, nec ornare metus sollicitudin id. Ut vestibulum libero dui, nec tincidunt metus mollis eu. Sed sed massa ex. Nam nisl dolor, porta sit amet massa nec, facilisis blandit lorem. Mauris tristique interdum sollicitudin. Aliquam at purus ut elit consequat volutpat. Suspendisse aliquam suscipit magna at tincidunt. Donec convallis quis libero sit amet aliquet. Mauris ullamcorper ante sit amet lectus suscipit pulvinar quis eu lacus.
+Nullam nec nunc dui. Quisque libero lorem, vulputate sed diam non, sodales consectetur sem. Sed mollis libero sem, ac laoreet enim porttitor ut. Cras a nisl nisl. Suspendisse laoreet dui ac varius aliquam. Nam dolor risus, faucibus id tortor et, ornare ultrices urna. Quisque fermentum id eros a tincidunt. Vestibulum cursus est non nisl iaculis laoreet. In aliquam metus imperdiet dapibus posuere. Proin sollicitudin enim nec lobortis feugiat. Fusce consectetur nunc ac diam tristique sodales.
+Aliquam varius sit amet dolor sed placerat. Curabitur imperdiet ullamcorper aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum tortor sed lacus maximus gravida. Mauris imperdiet elit vitae hendrerit elementum. Morbi imperdiet, erat congue gravida faucibus, elit purus tincidunt nulla, a mollis magna ipsum at ipsum. In hac habitasse platea dictumst. Donec varius blandit maximus. Nunc gravida tincidunt euismod.
+Vivamus accumsan lectus non diam scelerisque sollicitudin. Maecenas gravida nibh in lectus ullamcorper bibendum. Integer suscipit sit amet leo a sodales. Phasellus convallis ut mauris et accumsan. Nulla convallis, felis eu ultrices consequat, tellus lorem tincidunt massa, vitae dignissim nunc ipsum et tortor. Integer gravida accumsan ex vel fringilla. Phasellus gravida ex nec lorem congue, ac tempor sapien iaculis. Nunc turpis lectus, molestie id porttitor in, vulputate ac tortor. Etiam elementum id quam eu porttitor. Donec at mi nulla. Donec est urna, dictum rhoncus ipsum et, ornare ullamcorper eros. Duis pellentesque, mi vel facilisis tempus, tortor elit suscipit velit, vel sollicitudin risus elit id purus. Suspendisse potenti. Sed accumsan ipsum id nisi bibendum, sit amet tincidunt nunc sollicitudin.
+    </div>
+  </div>
+</div>
+`;

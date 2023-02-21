@@ -87,7 +87,7 @@ const App = (props: AppProps) => {
 
   return (
     <div className="ms-welcome">
-      <Header logo={require("./../../../assets/logo.png")} title={props.title} message="DraftWise" />
+      <Header title={props.title} message="DraftWise" />
       <TermsList />
     </div>
   );

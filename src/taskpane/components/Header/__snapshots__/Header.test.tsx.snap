@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header rendering renders correctly 1`] = `
+<section
+  className="w-full px-4 py-2 border-b border-solid border-b-neutral-300 flex flex-row items-center justify-between"
+>
+  <div
+    className="flex flex-row items-center"
+  >
+    <img
+      alt="Title"
+      className="mr-2"
+      src=""
+      title="Title"
+      width="50"
+    />
+    <h1
+      className="text-lg dw-dark-green-color font-semibold tracking-wide"
+    >
+      DraftWise
+    </h1>
+  </div>
+  <div
+    className="flex flex-row items-center pr-8"
+  >
+    <div
+      className="mr-4"
+    >
+      <div
+        className="inline-block relative"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="border-b-2 border-solid"
+          onClick={[Function]}
+          style={
+            {
+              "borderBottomColor": "#189450",
+            }
+          }
+        >
+          <svg
+            aria-label="document-active"
+            className="h-8 cursor-pointer ___12fm75w_v8ls9a0 f1w7gpdv fez10in fg4l7m0"
+            fill="currentColor"
+            height={20}
+            role="img"
+            viewBox="0 0 20 20"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 6.5V2H5.5C4.67 2 4 2.67 4 3.5v13c0 .83.67 1.5 1.5 1.5h9c.83 0 1.5-.67 1.5-1.5V8h-4.5A1.5 1.5 0 0 1 10 6.5ZM6.5 10h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1Zm0 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1Zm0 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1ZM11 6.5V2.25L15.75 7H11.5a.5.5 0 0 1-.5-.5Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="inline-block relative"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="border-b-2 border-solid"
+        onClick={[Function]}
+        style={{}}
+      >
+        <svg
+          aria-label="paragraph"
+          className="h-8 cursor-pointer ___12fm75w_v8ls9a0 f1w7gpdv fez10in fg4l7m0"
+          fill="currentColor"
+          height={20}
+          role="img"
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 5.5A2.5 2.5 0 0 0 14.5 3h-9A2.5 2.5 0 0 0 3 5.5v9A2.5 2.5 0 0 0 5.5 17h9a2.5 2.5 0 0 0 2.5-2.5v-9ZM6 6.75c0-.41.32-.75.7-.75h6.6c.38 0 .7.34.7.75s-.32.75-.7.75H6.7c-.38 0-.7-.34-.7-.75Zm0 3c0-.41.32-.75.7-.75h3.6c.38 0 .7.34.7.75s-.32.75-.7.75H6.7c-.38 0-.7-.34-.7-.75ZM6.7 12h6.6c.38 0 .7.34.7.75s-.32.75-.7.75H6.7c-.38 0-.7-.34-.7-.75s.32-.75.7-.75Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Header rendering renders with other props 1`] = `
+<section
+  className="w-full px-4 py-2 border-b border-solid border-b-neutral-300 flex flex-row items-center justify-between"
+>
+  <div
+    className="flex flex-row items-center"
+  >
+    <img
+      alt="Title 2"
+      className="mr-2"
+      src=""
+      title="Title 2"
+      width="50"
+    />
+    <h1
+      className="text-lg dw-dark-green-color font-semibold tracking-wide"
+    >
+      DraftWise 2
+    </h1>
+  </div>
+  <div
+    className="flex flex-row items-center pr-8"
+  >
+    <div
+      className="mr-4"
+    >
+      <div
+        className="inline-block relative"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="border-b-2 border-solid"
+          onClick={[Function]}
+          style={
+            {
+              "borderBottomColor": "#189450",
+            }
+          }
+        >
+          <svg
+            aria-label="document-active"
+            className="h-8 cursor-pointer ___12fm75w_v8ls9a0 f1w7gpdv fez10in fg4l7m0"
+            fill="currentColor"
+            height={20}
+            role="img"
+            viewBox="0 0 20 20"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 6.5V2H5.5C4.67 2 4 2.67 4 3.5v13c0 .83.67 1.5 1.5 1.5h9c.83 0 1.5-.67 1.5-1.5V8h-4.5A1.5 1.5 0 0 1 10 6.5ZM6.5 10h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1Zm0 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1Zm0 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1ZM11 6.5V2.25L15.75 7H11.5a.5.5 0 0 1-.5-.5Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="inline-block relative"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="border-b-2 border-solid"
+        onClick={[Function]}
+        style={{}}
+      >
+        <svg
+          aria-label="paragraph"
+          className="h-8 cursor-pointer ___12fm75w_v8ls9a0 f1w7gpdv fez10in fg4l7m0"
+          fill="currentColor"
+          height={20}
+          role="img"
+          viewBox="0 0 20 20"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 5.5A2.5 2.5 0 0 0 14.5 3h-9A2.5 2.5 0 0 0 3 5.5v9A2.5 2.5 0 0 0 5.5 17h9a2.5 2.5 0 0 0 2.5-2.5v-9ZM6 6.75c0-.41.32-.75.7-.75h6.6c.38 0 .7.34.7.75s-.32.75-.7.75H6.7c-.38 0-.7-.34-.7-.75Zm0 3c0-.41.32-.75.7-.75h3.6c.38 0 .7.34.7.75s-.32.75-.7.75H6.7c-.38 0-.7-.34-.7-.75ZM6.7 12h6.6c.38 0 .7.34.7.75s-.32.75-.7.75H6.7c-.38 0-.7-.34-.7-.75s.32-.75.7-.75Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+`;

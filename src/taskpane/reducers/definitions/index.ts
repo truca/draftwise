@@ -1,15 +1,15 @@
 import { getDefinitionsStateFromParagraphs } from "./helpers";
 import { DefinitionsActions, DefinitionsState, DefinitionsTypes } from "./types";
 
-const initialState: DefinitionsState = {
+export const initialState: DefinitionsState = {
   selectedParagraphText: "",
   paragraphs: [],
   terms: [],
   definitionsHash: {},
 };
 
-const definitions = (state: DefinitionsState = initialState, action: DefinitionsActions) => {
-  switch (action.type) {
+const definitions = (state: DefinitionsState = initialState, action?: DefinitionsActions) => {
+  switch (action?.type) {
     case DefinitionsTypes.INITIALIZE_DEFINITIONS:
       // eslint-disable-next-line no-case-declarations
       const definitions = getDefinitionsStateFromParagraphs(action.paragraphs);

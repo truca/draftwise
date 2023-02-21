@@ -22,7 +22,11 @@ export default function Term({ term, definition, onToggleExpand }: TermProps) {
     <div className="mt-6">
       <div className="flex flex-row justify-between items-center">
         <div className="capitalize text-lg font-extralight">{term}</div>
-        <ChevronIcon className="cursor-pointer mt-1" onClick={toggleIsOpen} />
+        <ChevronIcon
+          aria-label={isOpen ? "up-arrow" : "down-arrow"}
+          className="cursor-pointer mt-1"
+          onClick={toggleIsOpen}
+        />
       </div>
       <div
         style={{ borderColor: "#189450" }}

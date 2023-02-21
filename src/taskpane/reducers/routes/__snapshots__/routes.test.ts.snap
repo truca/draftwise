@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes reducer change route 1`] = `
+{
+  "route": "PARAGRAPH",
+}
+`;
+
+exports[`routes reducer initial state 1`] = `
+{
+  "route": "DOCUMENT",
+}
+`;
+
+exports[`routes reducer initial state 2`] = `
+{
+  "route": "PARAGRAPH",
+}
+`;
+
+exports[`routes selectors routeSelector 1`] = `"DOCUMENT"`;

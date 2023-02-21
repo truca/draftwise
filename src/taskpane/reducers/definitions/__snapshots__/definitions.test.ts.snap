@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`descriptions reducer initial state 1`] = `
+{
+  "definitionsHash": {},
+  "paragraphs": [],
+  "selectedParagraphText": "",
+  "terms": [],
+}
+`;
+
+exports[`descriptions reducer initialize definitions 1`] = `
+{
+  "definitionsHash": {
+    "expenses": "shall include all reasonable attorneys’ fees",
+  },
+  "paragraphs": [
+    "paragraph",
+    "“Expenses” shall include all reasonable attorneys’ fees",
+  ],
+  "selectedParagraphText": "",
+  "terms": [
+    "expenses",
+  ],
+}
+`;
+
+exports[`descriptions reducer set selected paragraph 1`] = `
+{
+  "definitionsHash": {},
+  "paragraphs": [],
+  "selectedParagraphText": "paragraph",
+  "terms": [],
+}
+`;
+
+exports[`descriptions selectors getTermsWithDefinitions 1`] = `
+[
+  {
+    "definition": "shall include all reasonable attorneys’ fees",
+    "term": "expenses",
+  },
+]
+`;
+
+exports[`descriptions selectors getTermsWithDefinitionsInParagraph 1`] = `
+[
+  {
+    "definition": "fee",
+    "term": "fee",
+  },
+]
+`;
+
+exports[`descriptions selectors selectedParagraphText 1`] = `"paragraph"`;

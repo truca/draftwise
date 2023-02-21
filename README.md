@@ -25,8 +25,17 @@ To define the CSS library that was going to be used on the current implementatio
 
 I discarded (1) as the components needed for this app are just a few, so we'd be adding a lot of code we'd not use. To compare (2) and (3), I looked for some comparisons online and I found this article: https://pustelto.com/blog/css-vs-css-in-js-perf/, where they compared Styled components against Linaria and found that Linaria (CSS) was more effective in many relevant metrics. (i.e. they found a difference of 868ms in Total Blocking Time between Linaria and SC in one implementation). From that, I discarded (2). 
 
-Lastly, I had 2 flavours: vanilla CSS and tailwind CSS. I fopund this article: https://www.programonaut.com/tailwind-css-vs-css-an-in-depth-comparison-speed-file-size-etc/ detailing key differences between them, being mostly that Tailwind is more efficient for development and provides a great DX, while CSS has a lower file size (CSS files). So I used Tailwind as it is performant and provides a good DX and a lower development time.
+Lastly, I had 2 flavours: vanilla CSS and tailwind CSS. I found this article: https://www.programonaut.com/tailwind-css-vs-css-an-in-depth-comparison-speed-file-size-etc/ detailing key differences between them, being mostly that Tailwind is more efficient for development and provides a great DX, while CSS has a lower file size (CSS files). So I used Tailwind as it is performant and provides a good DX and a lower development time.
 
 ## Future improvements
 
-- Add proper navigation: I'd add React navigation package to handle navigation as the app gets bigger. I didn't do it now since the navigation was really simple and I didn't want to add an extra package as performance is so important
+- React navigation: Add proper navigation to handle navigation as the app gets bigger. I didn't do it now since the navigation was really simple and I didn't want to add an extra package as performance is so important
+- Storybook: To make it simpler for future developers to know the components are available, how do they look, their props and their options, I'd add storybook, that also enhances the communication with the people from design
+
+## Testing
+
+To run the tests, do "yarn test"
+
+## Development Server
+
+To run the development server, do "yarn start". If you need to change the css classes that are being used, you have to run "yarn buildcss-watch" so that the tailwind server rebuilds the classes that are added to the css file
