@@ -31,6 +31,7 @@ Lastly, I had 2 flavours: vanilla CSS and tailwind CSS. I found this article: ht
 
 - React navigation: Add proper navigation to handle navigation as the app gets bigger. I didn't do it now since the navigation was really simple and I didn't want to add an extra package as performance is so important
 - Storybook: To make it simpler for future developers to know the components are available, how do they look, their props and their options, I'd add storybook, that also enhances the communication with the people from design
+- Search bar: I'd add a search bar to simplify the search of terms in case that the amount of terms is too big. If possible, making that search being a fuzzy search tends to make it even better
 
 ## Testing
 
